@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int health = 36;
+    public int health = 3 * 12;
     public int numOfHearts = 3;
 
     public Image[] hearts;
@@ -38,44 +38,34 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    // Function to handle taking damage
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        Debug.Log("Player took damage, current health: " + health);
 
-    // public int maxHealth = 100;
-    // private int currentHealth;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
 
-    // void Start()
-    // {
-    //     // Initialize health
-    //     currentHealth = maxHealth;
-    // }
+    // Function to handle player death
+    void Die()
+    {
+        Debug.Log("Player died");
+        // Add death logic here (e.g., respawn, reload level, or disable player)
+        gameObject.SetActive(false);
+    }
 
-    // // Function to handle taking damage
-    // public void TakeDamage(int damage)
-    // {
-    //     currentHealth -= damage;
-    //     Debug.Log("Player took damage, current health: " + currentHealth);
-
-    //     if (currentHealth <= 0)
-    //     {
-    //         Die();
-    //     }
-    // }
-
-    // // Function to handle player death
-    // void Die()
-    // {
-    //     Debug.Log("Player died");
-    //     // Add death logic here (e.g., respawn, reload level, or disable player)
-    //     gameObject.SetActive(false);
-    // }
-
-    // // Function to heal the player (if needed)
-    // public void Heal(int healAmount)
-    // {
-    //     currentHealth += healAmount;
-    //     if (currentHealth > maxHealth)
-    //     {
-    //         currentHealth = maxHealth;
-    //     }
-    //     Debug.Log("Player healed, current health: " + currentHealth);
-    // }
+    // Function to heal the player (if needed)
+    public void Heal(int healAmount)
+    {
+        health += healAmount;
+        if (health > numOfHearts * healthPerHeart)
+        {
+            health = numOfHearts * healthPerHeart;
+        }
+        Debug.Log("Player healed, current health: " + health);
+    }
 }
