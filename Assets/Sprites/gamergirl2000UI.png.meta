@@ -1,0 +1,818 @@
+fileFormatVersion: 2
+guid: 9222a846b1ab4bf44a878726f117041e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: gamergirl2000UI_0
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 3246
+        width: 259
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d6a96c90c724b04a891642681076614
+      internalID: -1756918791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_1
+      rect:
+        serializedVersion: 2
+        x: 1134
+        y: 3246
+        width: 259
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf607522d9c19a429829160fd3c7652
+      internalID: 2018217826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_2
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 3246
+        width: 259
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df3fcf54b08e0e479dad82d62aaa325
+      internalID: -884464803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_3
+      rect:
+        serializedVersion: 2
+        x: 2159
+        y: 3246
+        width: 258
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 454e7b8385df2a04294c78ed47ef3b3f
+      internalID: 145273234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_4
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 2735
+        width: 259
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027931662e845574daa32044a70ac46f
+      internalID: -58314895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_5
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 2735
+        width: 259
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efec60a0b244383469c454866229cbdb
+      internalID: 52422357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_6
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 2686
+        width: 450
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29f0a48937758514abe6de25d3a7a90b
+      internalID: -1033195314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_7
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 2686
+        width: 452
+        height: 179
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02a08b3f31f820840821fcbe40f3c1ae
+      internalID: 1537410479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_8
+      rect:
+        serializedVersion: 2
+        x: 2079
+        y: 2655
+        width: 418
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 817be1d7b28aab5429ff2dc599989f41
+      internalID: 145706168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_9
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 2142
+        width: 419
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9523a0b95c2e3041b2f762d8df4ce5e
+      internalID: 1346918021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_10
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 2142
+        width: 419
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20f97e9429fd75c438d23b6c77262029
+      internalID: 2008720792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_11
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 2142
+        width: 418
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 975496317d17a4545bb9f0dec6e0687e
+      internalID: -1870606177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_12
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 2142
+        width: 420
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b45f08c4ba923734b80e981f762baa78
+      internalID: -1639490700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_13
+      rect:
+        serializedVersion: 2
+        x: 2079
+        y: 2142
+        width: 418
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d00cee2a4dcd0c4c9c23a0bbfb2a7ab
+      internalID: 1372750391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_14
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1631
+        width: 419
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b3512342c4a3e6448e258bdab1fcd48
+      internalID: -402782958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_15
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 1631
+        width: 419
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd25606fa81a8494b9223b3f9c03df52
+      internalID: -530468907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_16
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 1631
+        width: 418
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c874aec46075a1e4baf0890d143d54b1
+      internalID: -1894829724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_17
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 1631
+        width: 420
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d42c91ff4905c174f9cde4da1881a4e9
+      internalID: 2104094863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_18
+      rect:
+        serializedVersion: 2
+        x: 2079
+        y: 1631
+        width: 418
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d71a54367755e54480310ca8370ab1e
+      internalID: 2025791051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_19
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 1118
+        width: 419
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c7c3ba6999707c468d6eff990e1b618
+      internalID: -568681901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_20
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 1118
+        width: 419
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54865d90e35f1e14698319e77082358c
+      internalID: -1018917786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_21
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 1118
+        width: 418
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d355f04d0a393ca4693ae1bc946eafd0
+      internalID: 1499362718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_22
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 1118
+        width: 420
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b83205a174a8d604981e92a563469b9f
+      internalID: 335707291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_23
+      rect:
+        serializedVersion: 2
+        x: 2079
+        y: 1118
+        width: 418
+        height: 356
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: decc1c3736898f947b2264b0e58f8b81
+      internalID: -1086336369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_24
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 607
+        width: 419
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36329799897fc7f4996351c3a013090b
+      internalID: 888106504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_25
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 607
+        width: 419
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d7aa06171af0244a6fc9f5aabb24b4
+      internalID: 2058036780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_26
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 607
+        width: 418
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88862d1b1b2d35a47924923d1cbb0aed
+      internalID: -638211669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_27
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 607
+        width: 420
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d82c293b848106c4a89e1967617e30bc
+      internalID: -1303921747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_28
+      rect:
+        serializedVersion: 2
+        x: 2079
+        y: 607
+        width: 418
+        height: 354
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a3f84485179d1748941f2c43921bd6e
+      internalID: -1990185121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_29
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 95
+        width: 419
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f90b18f168bb4c04ba453e4e0d501b27
+      internalID: 72386338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_30
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 95
+        width: 419
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15568a437256353429535a515699cf8f
+      internalID: -1168595963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: gamergirl2000UI_31
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 95
+        width: 418
+        height: 355
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6702acd189162f4bb9579ff9432d169
+      internalID: -1697206843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      gamergirl2000UI_0: -1756918791
+      gamergirl2000UI_1: 2018217826
+      gamergirl2000UI_10: 2008720792
+      gamergirl2000UI_11: -1870606177
+      gamergirl2000UI_12: -1639490700
+      gamergirl2000UI_13: 1372750391
+      gamergirl2000UI_14: -402782958
+      gamergirl2000UI_15: -530468907
+      gamergirl2000UI_16: -1894829724
+      gamergirl2000UI_17: 2104094863
+      gamergirl2000UI_18: 2025791051
+      gamergirl2000UI_19: -568681901
+      gamergirl2000UI_2: -884464803
+      gamergirl2000UI_20: -1018917786
+      gamergirl2000UI_21: 1499362718
+      gamergirl2000UI_22: 335707291
+      gamergirl2000UI_23: -1086336369
+      gamergirl2000UI_24: 888106504
+      gamergirl2000UI_25: 2058036780
+      gamergirl2000UI_26: -638211669
+      gamergirl2000UI_27: -1303921747
+      gamergirl2000UI_28: -1990185121
+      gamergirl2000UI_29: 72386338
+      gamergirl2000UI_3: 145273234
+      gamergirl2000UI_30: -1168595963
+      gamergirl2000UI_31: -1697206843
+      gamergirl2000UI_4: -58314895
+      gamergirl2000UI_5: 52422357
+      gamergirl2000UI_6: -1033195314
+      gamergirl2000UI_7: 1537410479
+      gamergirl2000UI_8: 145706168
+      gamergirl2000UI_9: 1346918021
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
