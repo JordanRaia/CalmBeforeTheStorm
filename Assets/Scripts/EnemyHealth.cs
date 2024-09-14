@@ -27,7 +27,15 @@ public class EnemyHealth : MonoBehaviour
     // This function is called when the enemy dies
     void Die()
     {
+        // Notify the EnemyFollow script that the enemy is dead
+        EnemyFollow enemyFollow = GetComponent<EnemyFollow>();
+        if (enemyFollow != null)
+        {
+            enemyFollow.OnEnemyDeath();
+        }
+
         // Optionally, destroy the enemy game object
         Destroy(gameObject);
     }
+
 }
