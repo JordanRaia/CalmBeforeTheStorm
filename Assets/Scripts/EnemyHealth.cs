@@ -7,6 +7,10 @@ public class EnemyHealth : MonoBehaviour
     public int maxHealth = 100;  // The enemy's maximum health
     private int currentHealth;   // The enemy's current health
 
+    // Event to notify when the enemy dies
+    public delegate void DeathEvent(GameObject enemy);
+    public event DeathEvent OnDeath;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +33,17 @@ public class EnemyHealth : MonoBehaviour
     {
         // Notify the EnemyFollow script that the enemy is dead
         EnemyFollow enemyFollow = GetComponent<EnemyFollow>();
+        if (enemyFollow != null)
+        {
+            enemyFollow.OnEnemyDeath();
+        }
+
+        // Notify any subscribers that this enemy is dead
+        if (OnDeath != null)
+        {
+            OnDeath(gameObject);  // Trigger the OnDeath event and pass this enemy object
+        }
+
         if (enemyFollow != null)
         {
             enemyFollow.OnEnemyDeath();

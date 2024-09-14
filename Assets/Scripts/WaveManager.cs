@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class WaveManager : MonoBehaviour
 {
@@ -12,6 +13,11 @@ public class WaveManager : MonoBehaviour
     private int currentWave = 0;
     private bool isResting = true; // Start the game in resting state
     private float restTimer;
+
+    // Reference to the SpawnManager
+    public SpawnManager spawnManager;
+
+    private List<GameObject> activeEnemies = new List<GameObject>();
 
     void Start()
     {
@@ -32,6 +38,12 @@ public class WaveManager : MonoBehaviour
                 StartWave();
             }
         }
+
+        // Check if all enemies are defeated and start the rest period
+        if (!isResting && activeEnemies.Count == 0)
+        {
+            StartRestPeriod();
+        }
     }
 
     void StartWave()
@@ -40,18 +52,23 @@ public class WaveManager : MonoBehaviour
         currentWave++;
         waveStatusText.text = "Wave " + currentWave;
 
-        // not yet implemented
         // Spawn enemies for the wave
-        // for (int i = 0; i < enemiesPerWave; i++)
-        // {
-        //     int randomSpawnPoint = Random.Range(0, spawnPoints.Length);
-        //     int randomEnemy = Random.Range(0, enemies.Length);
-        //     Instantiate(enemies[randomEnemy], spawnPoints[randomSpawnPoint].position, Quaternion.identity);
-        // }
+        for (int i = 0; i < enemiesPerWave; i++)
+        {
+            Vector2 spawnPosition = spawnManager.GetValidSpawnPosition(); // Get position from SpawnManager
+            int randomEnemy = Random.Range(0, enemies.Length);
+            GameObject spawnedEnemy = Instantiate(enemies[randomEnemy], spawnPosition, Quaternion.identity);
 
-        // temp, later change to when all enemies are defeated
-        // Schedule next rest period after a few seconds
-        Invoke("StartRestPeriod", 5f);  // Optional: Change the 5f if you want to modify wave duration
+            // Add the spawned enemy to the list
+            activeEnemies.Add(spawnedEnemy);
+
+            // Register for the enemy's OnDeath event from the EnemyHealth component
+            EnemyHealth enemyHealth = spawnedEnemy.GetComponent<EnemyHealth>();
+            if (enemyHealth != null)
+            {
+                enemyHealth.OnDeath += OnEnemyDeath;
+            }
+        }
     }
 
     void StartRestPeriod()
@@ -59,5 +76,11 @@ public class WaveManager : MonoBehaviour
         isResting = true;
         restTimer = timeBetweenWaves;
         waveStatusText.text = "Rest: " + Mathf.Ceil(restTimer);
+    }
+
+    void OnEnemyDeath(GameObject enemy)
+    {
+        // Remove the enemy from the active list
+        activeEnemies.Remove(enemy);
     }
 }
