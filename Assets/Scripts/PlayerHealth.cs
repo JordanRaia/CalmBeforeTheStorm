@@ -5,38 +5,35 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int health = 3;
+    public int health = 36;
     public int numOfHearts = 3;
 
     public Image[] hearts;
-    public Sprite fullHeart;
-    public Sprite emptyHeart;
+    public Sprite[] heartSprites; // Array of 12 sprites for each heart state
+
+    private int healthPerHeart = 12;
 
     void Update()
     {
-        if (health > numOfHearts)
+        if (health > numOfHearts * healthPerHeart)
         {
-            health = numOfHearts;
+            health = numOfHearts * healthPerHeart;
         }
 
         for (int i = 0; i < hearts.Length; i++)
         {
-            if (i < health)
-            {
-                hearts[i].sprite = fullHeart;
-            }
-            else
-            {
-                hearts[i].sprite = emptyHeart;
-            }
-
             if (i < numOfHearts)
             {
-                hearts[i].enabled = true;
+                hearts[i].enabled = true; // Enable heart if it's within the number of hearts
+                int heartHealth = Mathf.Clamp(health - (i * healthPerHeart), 0, healthPerHeart); // Health for this heart
+
+                // Calculate which sprite to use (based on heart health)
+                int spriteIndex = Mathf.FloorToInt((heartHealth / (float)healthPerHeart) * (heartSprites.Length - 1));
+                hearts[i].sprite = heartSprites[spriteIndex];
             }
             else
             {
-                hearts[i].enabled = false;
+                hearts[i].enabled = false; // Disable hearts outside of the numOfHearts range
             }
         }
     }

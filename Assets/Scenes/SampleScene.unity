@@ -864,7 +864,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ddc5d166075ad4d859e29ca0dff1f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
+  health: 0
+  numOfHearts: 3
+  hearts:
+  - {fileID: 699895973}
+  - {fileID: 694879266}
+  - {fileID: 73428078}
+  - {fileID: 809389885}
+  - {fileID: 519292405}
+  - {fileID: 408337936}
+  - {fileID: 30844817}
+  - {fileID: 774904430}
+  - {fileID: 2013150126}
+  - {fileID: 1532516413}
+  heartSprites:
+  - {fileID: -568681901, guid: 9222a846b1ab4bf44a878726f117041e, type: 3}
+  - {fileID: 2025791051, guid: 9222a846b1ab4bf44a878726f117041e, type: 3}
+  - {fileID: 2104094863, guid: 9222a846b1ab4bf44a878726f117041e, type: 3}
+  - {fileID: -1894829724, guid: 9222a846b1ab4bf44a878726f117041e, type: 3}
+  - {fileID: -530468907, guid: 9222a846b1ab4bf44a878726f117041e, type: 3}
+  - {fileID: -402782958, guid: 9222a846b1ab4bf44a878726f117041e, type: 3}
+  - {fileID: 1372750391, guid: 9222a846b1ab4bf44a878726f117041e, type: 3}
+  - {fileID: -1639490700, guid: 9222a846b1ab4bf44a878726f117041e, type: 3}
+  - {fileID: -1870606177, guid: 9222a846b1ab4bf44a878726f117041e, type: 3}
+  - {fileID: 2008720792, guid: 9222a846b1ab4bf44a878726f117041e, type: 3}
+  - {fileID: 1346918021, guid: 9222a846b1ab4bf44a878726f117041e, type: 3}
+  - {fileID: 145706168, guid: 9222a846b1ab4bf44a878726f117041e, type: 3}
 --- !u!1 &694879264
 GameObject:
   m_ObjectHideFlags: 0
