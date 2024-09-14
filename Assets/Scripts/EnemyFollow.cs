@@ -43,7 +43,6 @@ public class EnemyFollow : MonoBehaviour
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damageToDeal);
-                StartCoroutine(DamageCooldown());
             }
         }
     }
@@ -73,14 +72,6 @@ public class EnemyFollow : MonoBehaviour
         {
             isTouchingPlayer = false; // Player is no longer in contact
         }
-    }
-
-    // Coroutine to handle damage cooldown
-    private IEnumerator DamageCooldown()
-    {
-        canDealDamage = false;
-        yield return new WaitForSeconds(damageInterval); // Wait for the defined interval
-        canDealDamage = true;
     }
 
     // Call this function to stop movement temporarily during knockback
