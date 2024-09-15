@@ -29,6 +29,9 @@ public class EnemyHealth : MonoBehaviour
     private bool isDying = false; // To track if the enemy is in the dying state
     private Collider2D enemyCollider; // Reference to the enemy's collider
 
+    public int pointsOnDeath = 1;
+    private PointsManager pointsManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,6 +41,9 @@ public class EnemyHealth : MonoBehaviour
         healthBarRenderer.enabled = false;
         originalColor = healthBarRenderer.color;
         enemyCollider = GetComponent<Collider2D>(); // Get the Collider2D component
+
+        // Automatically finds the PointsManager in the scene
+        pointsManager = FindObjectOfType<PointsManager>();
     }
 
     void Update()
@@ -91,7 +97,9 @@ public class EnemyHealth : MonoBehaviour
     {
         healthBarRenderer.enabled = true; // Enable the health bar
         healthBarTimer = healthBarVisibleDuration; // Reset the timer to keep it visible for a short time
+        healthBarRenderer.color = originalColor; // Reset the color to fully opaque
     }
+
 
     // Updates the health bar sprite based on the current health
     private void UpdateHealthBar()
@@ -125,6 +133,8 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         isDying = true;
+
+        pointsManager.AddPoints(1);
 
         enemyCollider.enabled = false;
 

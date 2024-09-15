@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(ExampleDialogueCoroutine());
+        //StartCoroutine(ExampleDialogueCoroutine());
     }
 
     IEnumerator ExampleDialogueCoroutine()

@@ -22,7 +22,8 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         // Start with the rest period when the game begins
-        StartRestPeriod();
+        //StartRestPeriod();
+        StartWave();
     }
 
     void Update()
