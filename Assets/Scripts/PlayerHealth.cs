@@ -25,6 +25,8 @@ public class PlayerHealth : MonoBehaviour
     //screen shake
     public ScreenShake screenShake;
 
+    public int maxHearts = 10; // Maximum number of hearts allowed
+
     void Start()
     {
         // set health to number of hearts worth of health
@@ -151,4 +153,18 @@ public class PlayerHealth : MonoBehaviour
         }
         Debug.Log("Player healed, current health: " + health);
     }
+
+    public void IncreaseMaxHealth(int numHearts)
+    {
+        numOfHearts += numHearts;
+        if (numOfHearts > maxHearts)
+        {
+            numOfHearts = maxHearts;
+        }
+        health = numOfHearts * healthPerHeart;
+
+        // Ensure UI updates correctly
+        // Update();
+    }
+
 }

@@ -1,9 +1,9 @@
 using UnityEngine;
-using TMPro; // Make sure to include this if using TextMeshPro
+using TMPro;
 
 public class PointsManager : MonoBehaviour
 {
-    public TextMeshProUGUI pointsText; // Drag and drop your text object in the Inspector
+    public TextMeshProUGUI pointsText; // Reference to your in-game coin display
     private int points = 0;            // Starting points
     private int maxPoints = 9999;      // Maximum point limit
 
@@ -16,14 +16,28 @@ public class PointsManager : MonoBehaviour
     public void AddPoints(int amount)
     {
         points += amount;
-
-        // Cap the points at the maximum value
         if (points > maxPoints)
         {
             points = maxPoints;
         }
+        UpdatePointsDisplay();
+    }
 
-        UpdatePointsDisplay(); // Update the UI whenever points change
+    // Function to spend points
+    public void SpendPoints(int amount)
+    {
+        points -= amount;
+        if (points < 0)
+        {
+            points = 0;
+        }
+        UpdatePointsDisplay();
+    }
+
+    // Function to get current points
+    public int GetPoints()
+    {
+        return points;
     }
 
     // Function to update the points display

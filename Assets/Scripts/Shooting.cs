@@ -22,7 +22,7 @@ public class Shooting : MonoBehaviour
     public LayerMask enemyLayer; // Layer for enemies to detect
     public int meleeDamage = 10; // Damage dealt by melee attack
 
-    public float meleeCooldown = 1.0f; // Cooldown for melee attacks
+    public float meleeCooldown = 0.5f; // Cooldown for melee attacks
     private bool canMelee = true; // Separate flag for melee attack availability
     private float meleeTimer = 0f; // Timer to track melee cooldown
 
@@ -32,6 +32,7 @@ public class Shooting : MonoBehaviour
 
     private Quaternion initialBulletRotation; // Store the initial rotation of the bullet (sword)
 
+    public int rangedDamage = 10; // Initial ranged damage
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,16 @@ public class Shooting : MonoBehaviour
         // Rotate the bullet sprite 90 degrees to the right
         initialBulletRotation = Quaternion.Euler(0, 0, -90);
         bulletTransform.localRotation = initialBulletRotation;
+    }
+
+    public void IncreaseMeleeDamage(int amount)
+    {
+        meleeDamage += amount;
+    }
+
+    public void IncreaseRangedDamage(int amount)
+    {
+        rangedDamage += amount;
     }
 
     // Update is called once per frame
@@ -89,7 +100,14 @@ public class Shooting : MonoBehaviour
             if (isRangedWeapon && canFire)
             {
                 canFire = false;
-                Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+                GameObject newBullet = Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+
+                // Pass the rangedDamage to the bullet
+                BulletScript bulletScript = newBullet.GetComponent<BulletScript>();
+                if (bulletScript != null)
+                {
+                    bulletScript.damage = rangedDamage;
+                }
             }
             else if (!isRangedWeapon && canMelee)
             {
@@ -158,8 +176,6 @@ public class Shooting : MonoBehaviour
                 enemyHealth.TakeDamage(meleeDamage);  // Deal damage to the enemy
             }
         }
-
-        Debug.Log("Melee attack performed! Hit " + hitEnemies.Length + " enemies.");
     }
 
     // Draw the melee range in the scene view (for debugging)
