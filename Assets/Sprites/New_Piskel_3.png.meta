@@ -1,0 +1,528 @@
+fileFormatVersion: 2
+guid: 373d15f7bb2bd4f4fada007db61f9034
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: New_Piskel_3_1
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 2159
+        width: 306
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f588ccd1aa51a464baa1a5639a6bb9bb
+      internalID: 1496662175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_3_3
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 2159
+        width: 305
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6de88d3d17fb164095ce12213d50edf
+      internalID: -17903601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_3_5
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 2159
+        width: 306
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b55072912b5790242869759eab6a4680
+      internalID: 1514640757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_3_7
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 2159
+        width: 305
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0ca71e8587bc4743b28344dff2457a8
+      internalID: -1585892437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_3_9
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 1647
+        width: 306
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 528c279bc5c397b49af7b4ba7f571273
+      internalID: -1662031993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_3_11
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1647
+        width: 305
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0b88a004d2570443881f3caf4490c83
+      internalID: -787910422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_3_13
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 1647
+        width: 306
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 060b32e89eb2bee4c99d2962a79a52fc
+      internalID: -544268625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_3_15
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 1647
+        width: 305
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e47bc9155daff24fb22b5543db6124a
+      internalID: -1485294644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_3_17
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 1135
+        width: 306
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82e912bc5e3fb124ab6a85f7dfbc0af3
+      internalID: 1738862826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_3_19
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1135
+        width: 305
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e0180e8ac16d44e9ae6f38769acd96
+      internalID: 728538082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_3_21
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 1135
+        width: 306
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5dced16384fe4643bf1e4feadd87def
+      internalID: -1327482928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_3_23
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 1135
+        width: 305
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea4edc831e86e764fbc92531e863ace4
+      internalID: 765669098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_3_25
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 622
+        width: 306
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 657955da9abdb7844ad7ee61f9640fa8
+      internalID: 660848892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_3_27
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 622
+        width: 305
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 043ba22af7996f44991b1d3b4cca0f11
+      internalID: 1411771110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_3_29
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 622
+        width: 306
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b0902dddba88b498f75e92ae2a233b
+      internalID: 2047122215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_3_31
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 622
+        width: 305
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fb1443ceb34b1241a1863d4d83db3c2
+      internalID: 127051034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_3_33
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 111
+        width: 306
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ca6954b1e0f5241a77f7f0931127b0
+      internalID: 1382618356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: New_Piskel_3_35
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 111
+        width: 305
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 119880f54925cf64c90321c83840805a
+      internalID: -1125975274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      New_Piskel_3_0: 1630557893
+      New_Piskel_3_1: 1496662175
+      New_Piskel_3_10: -1881142480
+      New_Piskel_3_11: -787910422
+      New_Piskel_3_12: 645213260
+      New_Piskel_3_13: -544268625
+      New_Piskel_3_14: 2117791090
+      New_Piskel_3_15: -1485294644
+      New_Piskel_3_16: -547944983
+      New_Piskel_3_17: 1738862826
+      New_Piskel_3_18: 2015209953
+      New_Piskel_3_19: 728538082
+      New_Piskel_3_2: -947565003
+      New_Piskel_3_20: -1359782995
+      New_Piskel_3_21: -1327482928
+      New_Piskel_3_22: 473760153
+      New_Piskel_3_23: 765669098
+      New_Piskel_3_24: 1904386267
+      New_Piskel_3_25: 660848892
+      New_Piskel_3_26: 169177717
+      New_Piskel_3_27: 1411771110
+      New_Piskel_3_28: 1257973967
+      New_Piskel_3_29: 2047122215
+      New_Piskel_3_3: -17903601
+      New_Piskel_3_30: 2083681564
+      New_Piskel_3_31: 127051034
+      New_Piskel_3_32: -177735622
+      New_Piskel_3_33: 1382618356
+      New_Piskel_3_34: -78622358
+      New_Piskel_3_35: -1125975274
+      New_Piskel_3_4: -1313814116
+      New_Piskel_3_5: 1514640757
+      New_Piskel_3_6: 2080246557
+      New_Piskel_3_7: -1585892437
+      New_Piskel_3_8: -427395467
+      New_Piskel_3_9: -1662031993
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

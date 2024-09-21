@@ -12,36 +12,55 @@ public class Shooting : MonoBehaviour
     private float timer;
     public float timeBetweenFiring;
 
-    public SpriteRenderer weaponSpriteRenderer; // Reference to the sprite renderer for the weapon
-    public Sprite rangedWeaponSprite; // Sprite for the ranged weapon
-    public Sprite meleeWeaponSprite; // Sprite for the melee weapon
+    public SpriteRenderer weaponSpriteRenderer;
+    public Sprite rangedWeaponSprite;
+    public Sprite meleeWeaponSprite;
 
-    private bool isRangedWeapon = true; // true for ranged, false for melee
+    private bool isRangedWeapon = true;
 
-    public float meleeRange = 1f; // Range for melee attack
-    public LayerMask enemyLayer; // Layer for enemies to detect
-    public int meleeDamage = 10; // Damage dealt by melee attack
+    public float meleeRange = 1f;
+    public LayerMask enemyLayer;
+    public int meleeDamage = 10;
 
-    public float meleeCooldown = 0.5f; // Cooldown for melee attacks
-    private bool canMelee = true; // Separate flag for melee attack availability
-    private float meleeTimer = 0f; // Timer to track melee cooldown
+    public float meleeCooldown = 0.5f;
+    private bool canMelee = true;
+    private float meleeTimer = 0f;
 
-    public float meleeSwingAngle = 45f; // The maximum angle of the sword swing
-    public float meleeSwingSpeed = 10f; // Speed of the swing
-    private bool isSwinging = false; // Track if a swing is in progress
+    public float meleeSwingAngle = 45f;
+    public float meleeSwingSpeed = 10f;
+    private bool isSwinging = false;
 
-    private Quaternion initialBulletRotation; // Store the initial rotation of the bullet (sword)
+    private Quaternion initialBulletRotation;
 
-    public int rangedDamage = 10; // Initial ranged damage
-    // Start is called before the first frame update
+    public int rangedDamage = 10;
+    public int manaCostPerShot = 5; // Mana cost for each ranged attack
+
+    private PlayerMana playerMana; // Reference to the PlayerMana script
+    public GameObject playerGameObject; // Reference to the player GameObject
+    public GameObject smoke; // Reference to the smoke prefab
+
+
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        weaponSpriteRenderer.sprite = rangedWeaponSprite; // Set initial weapon sprite
+        weaponSpriteRenderer.sprite = rangedWeaponSprite;
 
-        // Rotate the bullet sprite 90 degrees to the right
         initialBulletRotation = Quaternion.Euler(0, 0, -90);
         bulletTransform.localRotation = initialBulletRotation;
+
+        // Get the PlayerMana component from the player GameObject
+        if (playerGameObject != null)
+        {
+            playerMana = playerGameObject.GetComponent<PlayerMana>();
+            if (playerMana == null)
+            {
+                Debug.LogError("PlayerMana script not found on the player GameObject!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Player GameObject is not assigned in the Shooting script!");
+        }
     }
 
     public void IncreaseMeleeDamage(int amount)
@@ -54,7 +73,6 @@ public class Shooting : MonoBehaviour
         rangedDamage += amount;
     }
 
-    // Update is called once per frame
     void Update()
     {
         mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
@@ -66,7 +84,6 @@ public class Shooting : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, rotZ);
         }
 
-
         if (!canFire)
         {
             timer += Time.deltaTime;
@@ -77,7 +94,6 @@ public class Shooting : MonoBehaviour
             }
         }
 
-        // Handle melee attack cooldown
         if (!canMelee)
         {
             meleeTimer += Time.deltaTime;
@@ -88,30 +104,46 @@ public class Shooting : MonoBehaviour
             }
         }
 
-        // Switch between weapons when pressing the space bar
         if (Input.GetKeyDown(KeyCode.Space))
         {
             SwitchWeapon();
         }
 
-        // Shoot or perform melee attack depending on the current weapon
-        if (Input.GetMouseButton(0))
+        // Shooting Logic
+        if (isRangedWeapon && canFire)
         {
-            if (isRangedWeapon && canFire)
+            if (Input.GetMouseButton(0))
             {
-                canFire = false;
-                GameObject newBullet = Instantiate(bullet, bulletTransform.position, Quaternion.identity);
-
-                // Pass the rangedDamage to the bullet
-                BulletScript bulletScript = newBullet.GetComponent<BulletScript>();
-                if (bulletScript != null)
+                // Check if the player has enough mana
+                if (playerMana != null && playerMana.UseMana(manaCostPerShot))
                 {
-                    bulletScript.damage = rangedDamage;
+                    canFire = false;
+                    GameObject newBullet = Instantiate(bullet, bulletTransform.position, Quaternion.identity);
+
+                    BulletScript bulletScript = newBullet.GetComponent<BulletScript>();
+                    if (bulletScript != null)
+                    {
+                        bulletScript.damage = rangedDamage;
+                    }
+                }
+                else if (Input.GetMouseButtonDown(0))
+                {
+                    // Not enough mana to fire, create smoke once
+                    if (smoke != null)
+                    {
+                        Instantiate(smoke, bulletTransform.position, Quaternion.identity);
+                    }
+                    else
+                    {
+                        Debug.LogError("Smoke prefab is not assigned in the Shooting script!");
+                    }
                 }
             }
-            else if (!isRangedWeapon && canMelee)
+        }
+        else if (!isRangedWeapon && canMelee)
+        {
+            if (Input.GetMouseButtonDown(0))
             {
-                // Melee weapon attack logic here (e.g., close-range attack)
                 canMelee = false;
                 StartCoroutine(SwingSword(rotZ));
                 PerformMeleeAttack();
@@ -119,70 +151,59 @@ public class Shooting : MonoBehaviour
         }
     }
 
-    // Coroutine for swinging the sword
     private IEnumerator SwingSword(float initialRotation)
     {
         isSwinging = true;
 
-        // Swing forward relative to the initial bullet rotation
         for (float t = 0; t < 1; t += Time.deltaTime * meleeSwingSpeed)
         {
             float angle = Mathf.Lerp(0, meleeSwingAngle, t);
-            bulletTransform.localRotation = initialBulletRotation * Quaternion.Euler(0, 0, -angle); // Apply rotation based on initial
+            bulletTransform.localRotation = initialBulletRotation * Quaternion.Euler(0, 0, -angle);
             yield return null;
         }
 
-        // Swing back to the initial position
         for (float t = 0; t < 1; t += Time.deltaTime * meleeSwingSpeed)
         {
             float angle = Mathf.Lerp(meleeSwingAngle, 0, t);
-            bulletTransform.localRotation = initialBulletRotation * Quaternion.Euler(0, 0, -angle); // Return to initial rotation
+            bulletTransform.localRotation = initialBulletRotation * Quaternion.Euler(0, 0, -angle);
             yield return null;
         }
 
-        // Reset to the exact initial rotation after the swing
         bulletTransform.localRotation = initialBulletRotation;
         isSwinging = false;
     }
 
-    // Switches between ranged and melee weapons
     private void SwitchWeapon()
     {
         isRangedWeapon = !isRangedWeapon;
 
         if (isRangedWeapon)
         {
-            weaponSpriteRenderer.sprite = rangedWeaponSprite; // Change to ranged weapon sprite
+            weaponSpriteRenderer.sprite = rangedWeaponSprite;
         }
         else
         {
-            weaponSpriteRenderer.sprite = meleeWeaponSprite; // Change to melee weapon sprite
+            weaponSpriteRenderer.sprite = meleeWeaponSprite;
         }
     }
 
-    // Handles melee attack logic
     private void PerformMeleeAttack()
     {
-        // Detect enemies within melee range around bulletTransform
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(bulletTransform.position, meleeRange, enemyLayer);
 
-        // Damage each enemy hit by the melee attack
         foreach (Collider2D enemy in hitEnemies)
         {
-            // Get the EnemyHealth component attached to the enemy
             EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(meleeDamage);  // Deal damage to the enemy
+                enemyHealth.TakeDamage(meleeDamage);
             }
         }
     }
 
-    // Draw the melee range in the scene view (for debugging)
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(bulletTransform.position, meleeRange);
     }
-
 }

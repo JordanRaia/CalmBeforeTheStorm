@@ -6,13 +6,14 @@ public class ShopManager : MonoBehaviour
 {
     public GameObject shopUI; // Reference to ShopPanel
     public TextMeshProUGUI coinText; // Reference to CoinText
+    public TextMeshProUGUI heartText;
 
     public PointsManager pointsManager; // Reference to PointsManager script
     public PlayerHealth playerHealth; // Reference to PlayerHealth script
     public Shooting shootingScript; // Reference to Shooting script
 
     // Prices for items
-    public int heartPrice = 50;
+    public int heartPrice = 5;
     public int meleeDamageUpgradePrice = 100;
     public int rangedDamageUpgradePrice = 100;
 
@@ -66,6 +67,7 @@ public class ShopManager : MonoBehaviour
     public void UpdateCoinDisplay()
     {
         coinText.text = pointsManager.GetPoints().ToString();
+        heartText.text = heartPrice.ToString();
     }
 
     // Purchasing Functions
@@ -75,6 +77,7 @@ public class ShopManager : MonoBehaviour
         {
             pointsManager.SpendPoints(heartPrice);
             playerHealth.IncreaseMaxHealth(1); // Increase hearts by 1
+            heartPrice += 5;
             UpdateCoinDisplay();
         }
         else
