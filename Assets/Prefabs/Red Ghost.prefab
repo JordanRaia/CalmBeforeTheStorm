@@ -115,7 +115,7 @@ GameObject:
   - component: {fileID: 6351918086378774182}
   - component: {fileID: 8803460341471777588}
   m_Layer: 6
-  m_Name: Blue Ghost
+  m_Name: Red Ghost
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,7 +178,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -2123149301, guid: f20b760f903d9b2468e0e868117c6d8a, type: 3}
+  m_Sprite: {fileID: -1198330783, guid: f20b760f903d9b2468e0e868117c6d8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -199,7 +199,7 @@ Animator:
   m_GameObject: {fileID: 6323851744502044029}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 050f9ab38b3ff8d4fbc25436ad807648, type: 2}
+  m_Controller: {fileID: 9100000, guid: 25a6dc53ef7c5cc4798fe2693a36ac31, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -249,8 +249,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f53969eb73b9eff46bf12bf149306986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
-  damage: 8
+  moveSpeed: 4
+  damage: 10
 --- !u!114 &6351918086378774182
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbf397e6f68603a4c870e68f220c605b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 120
+  maxHealth: 140
   healthBarRenderer: {fileID: 6295084725453176548}
   healthBarSprites:
   - {fileID: -88262330, guid: 01e7c8ec2f32cdc4a8a98c7991615293, type: 3}
@@ -288,7 +288,7 @@ MonoBehaviour:
   - {fileID: 2034082249, guid: 01e7c8ec2f32cdc4a8a98c7991615293, type: 3}
   - {fileID: -1815902827, guid: 01e7c8ec2f32cdc4a8a98c7991615293, type: 3}
   - {fileID: -1297029100, guid: 01e7c8ec2f32cdc4a8a98c7991615293, type: 3}
-  pointsOnDeath: 2
+  pointsOnDeath: 3
 --- !u!61 &8803460341471777588
 BoxCollider2D:
   m_ObjectHideFlags: 0

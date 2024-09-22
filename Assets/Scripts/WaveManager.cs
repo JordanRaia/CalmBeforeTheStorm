@@ -7,7 +7,7 @@ public class WaveManager : MonoBehaviour
     public GameObject[] enemies;
     public Transform[] spawnPoints;
     public int enemiesPerWave = 5;
-    public float timeBetweenWaves = 10f;  // Rest period duration
+    public float timeBetweenWaves = 20f;  // Rest period duration
     public Text waveStatusText; // UI Text to display the rest period countdown
 
     private int currentWave = 0;
@@ -22,8 +22,8 @@ public class WaveManager : MonoBehaviour
     void Start()
     {
         // Start with the rest period when the game begins
-        //StartRestPeriod();
-        StartWave();
+        StartRestPeriod();
+        //StartWave();
     }
 
     void Update()

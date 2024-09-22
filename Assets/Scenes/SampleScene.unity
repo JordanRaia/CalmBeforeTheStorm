@@ -9653,6 +9653,13 @@ MonoBehaviour:
   - {fileID: 5335092234232941763, guid: 8f80b63d5c483394d95471c94a391080, type: 3}
   - {fileID: 2474491556002263885, guid: a27722f8b8050ad49b949112d959a691, type: 3}
   - {fileID: 8037677639810653780, guid: 27d4bfc2d7540284eb590015d93bd89d, type: 3}
+  - {fileID: 6323851744502044029, guid: c8e19d243f3eaf442b0911ca837f7de8, type: 3}
+  - {fileID: 6323851744502044029, guid: 08fb085ce998d8d4ca28c966d0c7b0b3, type: 3}
+  - {fileID: 6323851744502044029, guid: fa1c09924beece141a5c6635b3292c99, type: 3}
+  - {fileID: 2474491556002263885, guid: 3c30b642e79b64b48aa8d161bad2ea2a, type: 3}
+  - {fileID: 2474491556002263885, guid: 95b4f49b8da8cba40b1c357c421e26f9, type: 3}
+  - {fileID: 8037677639810653780, guid: 17a2dffa5b1eb9240ac10744f7546567, type: 3}
+  - {fileID: 8037677639810653780, guid: ce1c91ae17b49e049b40edd490109bd5, type: 3}
   spawnPoints: []
   enemiesPerWave: 5
   timeBetweenWaves: 10

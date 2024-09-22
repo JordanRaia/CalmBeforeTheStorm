@@ -13,6 +13,7 @@ public class BeeBehavior : MonoBehaviour
     private Vector3 idlePosition;         // Current idle position relative to the player
 
     private bool canDamage = false;       // Indicates if the bee can damage the player
+    public int damage = 4;
 
     void Start()
     {
@@ -153,7 +154,7 @@ public class BeeBehavior : MonoBehaviour
 
             if (playerHealth != null)
             {
-                playerHealth.TakeDamage(1); // Adjust the damage amount as needed
+                playerHealth.TakeDamage(damage); // Adjust the damage amount as needed
             }
         }
     }
