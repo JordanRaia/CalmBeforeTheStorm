@@ -25,6 +25,8 @@ public class EnemyFollow : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
+        agent.speed = speed; // Set the agent's speed to the public variable
+
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -38,6 +40,7 @@ public class EnemyFollow : MonoBehaviour
         if (canMove && !isDead)
         {
             agent.SetDestination(target.position);
+            agent.speed = speed; // Update the agent's speed dynamically
 
             // Get the current movement direction based on agent velocity
             Vector2 movementDirection = new Vector2(agent.velocity.x, agent.velocity.y);
