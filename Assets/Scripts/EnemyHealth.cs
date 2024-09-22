@@ -13,7 +13,6 @@ public class EnemyHealth : MonoBehaviour
     public float healthBarVisibleDuration = 2f; // How long the health bar stays visible after taking damage
     private float healthBarTimer = 0f; // Timer for hiding the health bar
     public float fadeDuration = 1f; // How long the fade out takes
-    public int coinsOnDeath = 1;
 
 
 

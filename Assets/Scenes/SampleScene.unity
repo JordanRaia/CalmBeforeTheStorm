@@ -9643,8 +9643,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemies:
   - {fileID: 5335092234232941763, guid: 140e9856c9e81b44d832f1ba436efbf9, type: 3}
+  - {fileID: 5335092234232941763, guid: 00949d50acdadd54aa087f4e4346906e, type: 3}
+  - {fileID: 5335092234232941763, guid: 3a88224f11ea1934999bd77506e22c68, type: 3}
   - {fileID: 5335092234232941763, guid: 0c779685b7d7d9d4db1c26547ce54b91, type: 3}
+  - {fileID: 5335092234232941763, guid: 267392f7a6b59a54aa886a97b97f094f, type: 3}
+  - {fileID: 5335092234232941763, guid: d564c67bc4902d9479ef1f9ad817344d, type: 3}
   - {fileID: 5335092234232941763, guid: 0ffb573777cf13b4f873a9bbc58ae4c4, type: 3}
+  - {fileID: 5335092234232941763, guid: 4ba6429f310e2b04cac08771b8c30128, type: 3}
+  - {fileID: 5335092234232941763, guid: 8f80b63d5c483394d95471c94a391080, type: 3}
+  - {fileID: 2474491556002263885, guid: a27722f8b8050ad49b949112d959a691, type: 3}
   spawnPoints: []
   enemiesPerWave: 5
   timeBetweenWaves: 10
@@ -79136,7 +79143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsText: {fileID: 1880993452}
-  points: 0
+  points: 9999
 --- !u!114 &1880993452
 MonoBehaviour:
   m_ObjectHideFlags: 0
