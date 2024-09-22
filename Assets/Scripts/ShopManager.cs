@@ -7,15 +7,24 @@ public class ShopManager : MonoBehaviour
     public GameObject shopUI; // Reference to ShopPanel
     public TextMeshProUGUI coinText; // Reference to CoinText
     public TextMeshProUGUI heartText;
+    public TextMeshProUGUI meleeText;
+    public TextMeshProUGUI manaText;
+    public TextMeshProUGUI rangedText;
+    public TextMeshProUGUI healText;
+    public TextMeshProUGUI manaRegenText;
 
     public PointsManager pointsManager; // Reference to PointsManager script
+    public PlayerMana playerMana;
     public PlayerHealth playerHealth; // Reference to PlayerHealth script
     public Shooting shootingScript; // Reference to Shooting script
 
     // Prices for items
     public int heartPrice = 5;
-    public int meleeDamageUpgradePrice = 100;
-    public int rangedDamageUpgradePrice = 100;
+    public int manaPrice = 5;
+    public int healPrice = 1;
+    public int manaRegenPrice = 5;
+    public int meleeDamageUpgradePrice = 5;
+    public int rangedDamageUpgradePrice = 5;
 
     private bool shopIsOpen = false;
 
@@ -68,6 +77,11 @@ public class ShopManager : MonoBehaviour
     {
         coinText.text = pointsManager.GetPoints().ToString();
         heartText.text = heartPrice.ToString();
+        meleeText.text = meleeDamageUpgradePrice.ToString();
+        manaText.text = manaPrice.ToString();
+        rangedText.text = rangedDamageUpgradePrice.ToString();
+        healText.text = healPrice.ToString();
+        manaRegenText.text = manaRegenPrice.ToString();
     }
 
     // Purchasing Functions
@@ -87,12 +101,59 @@ public class ShopManager : MonoBehaviour
         }
     }
 
+    public void BuyMana()
+    {
+        if (pointsManager.GetPoints() >= manaPrice)
+        {
+            pointsManager.SpendPoints(manaPrice);
+            playerMana.IncreaseMaxMana(1); // Increase hearts by 1
+            manaPrice += 5;
+            UpdateCoinDisplay();
+        }
+        else
+        {
+            // Display the popup message
+            popupManager.ShowPopup("Insufficient Funds");
+        }
+    }
+
+    public void BuyHeal()
+    {
+        if (pointsManager.GetPoints() >= healPrice)
+        {
+            pointsManager.SpendPoints(healPrice);
+            playerHealth.Heal(12);
+        }
+        else
+        {
+            // Display the popup message
+            popupManager.ShowPopup("Insufficient Funds");
+        }
+    }
+
+    public void BuyManaRate()
+    {
+        if (pointsManager.GetPoints() >= manaRegenPrice)
+        {
+            pointsManager.SpendPoints(manaRegenPrice);
+            playerMana.IncreaseManaRegen();
+            manaRegenPrice += 5;
+            UpdateCoinDisplay();
+        }
+        else
+        {
+            // Display the popup message
+            popupManager.ShowPopup("Insufficient Funds");
+        }
+    }
+
     public void UpgradeMeleeDamage()
     {
         if (pointsManager.GetPoints() >= meleeDamageUpgradePrice)
         {
             pointsManager.SpendPoints(meleeDamageUpgradePrice);
             shootingScript.IncreaseMeleeDamage(5); // Increase melee damage by 5
+            meleeDamageUpgradePrice += 5;
             UpdateCoinDisplay();
         }
         else

@@ -151,7 +151,6 @@ public class PlayerHealth : MonoBehaviour
         {
             health = numOfHearts * healthPerHeart;
         }
-        Debug.Log("Player healed, current health: " + health);
     }
 
     public void IncreaseMaxHealth(int numHearts)

@@ -4,7 +4,7 @@ using TMPro;
 public class PointsManager : MonoBehaviour
 {
     public TextMeshProUGUI pointsText; // Reference to your in-game coin display
-    private int points = 0;            // Starting points
+    public int points = 0;            // Starting points
     private int maxPoints = 9999;      // Maximum point limit
 
     void Start()

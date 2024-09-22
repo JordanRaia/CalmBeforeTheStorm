@@ -61,7 +61,6 @@ public class PlayerMana : MonoBehaviour
         }
         else
         {
-            Debug.Log("Not enough mana!");
             return false; // Not enough mana
         }
     }
@@ -77,10 +76,18 @@ public class PlayerMana : MonoBehaviour
     }
 
     // Function to increase maximum mana
-    public void IncreaseMaxMana(float amount)
+    public void IncreaseMaxMana(int amount)
     {
-        maxMana += amount;
-        numOfManaBars = (int)(maxMana / manaPerBar); // Update number of mana bars
-        mana = maxMana; // Optionally refill mana when max increases
+        numOfManaBars += amount;
+        if (numOfManaBars > manaBars.Length)
+        {
+            numOfManaBars = manaBars.Length;
+        }
+        mana = numOfManaBars * manaPerBar;
+    }
+
+    public void IncreaseManaRegen()
+    {
+        manaRegenRate += 0.2f;
     }
 }
