@@ -9652,6 +9652,7 @@ MonoBehaviour:
   - {fileID: 5335092234232941763, guid: 4ba6429f310e2b04cac08771b8c30128, type: 3}
   - {fileID: 5335092234232941763, guid: 8f80b63d5c483394d95471c94a391080, type: 3}
   - {fileID: 2474491556002263885, guid: a27722f8b8050ad49b949112d959a691, type: 3}
+  - {fileID: 8037677639810653780, guid: 27d4bfc2d7540284eb590015d93bd89d, type: 3}
   spawnPoints: []
   enemiesPerWave: 5
   timeBetweenWaves: 10

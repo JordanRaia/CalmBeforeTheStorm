@@ -58,7 +58,7 @@ public class WaveManager : MonoBehaviour
         {
             Vector2 spawnPosition = spawnManager.GetValidSpawnPosition(); // Get position from SpawnManager
             int randomEnemy = Random.Range(0, enemies.Length);
-            //int randomEnemy = 9; //for testing new enemies
+            //int randomEnemy = 10; //for testing new enemies
             GameObject spawnedEnemy = Instantiate(enemies[randomEnemy], spawnPosition, Quaternion.identity);
 
             // Add the spawned enemy to the list
