@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 6547540026579142620}
   - component: {fileID: 4197398051580408930}
   - component: {fileID: 6151943741330496119}
-  m_Layer: 0
-  m_Name: EnemyBulletBlue
-  m_TagString: Untagged
+  m_Layer: 6
+  m_Name: EnemyBullet
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 10
-  m_Sprite: {fileID: -1735513951, guid: 9a1380a931f5a44408bc3dc632a6aa78, type: 3}
+  m_Sprite: {fileID: 1417877245, guid: e3a31fdb28828ba488b48a6dec74168a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ Animator:
   m_GameObject: {fileID: 3791395308179172514}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0057d7596ff2a9448b609b20842068c7, type: 2}
+  m_Controller: {fileID: 9100000, guid: 9fe3857a4c5a291409e5cd9827c4d44e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e21840967574d64399481382b839274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 12
+  damage: 8
   hitEffectPrefab: {fileID: 0}
 --- !u!61 &6151943741330496119
 BoxCollider2D:

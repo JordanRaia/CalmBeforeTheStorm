@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int maxHealth = 100;  // The enemy's maximum health
-    private int currentHealth;   // The enemy's current health
+    public int currentHealth;   // The enemy's current health
 
     // Health bar sprite management
     public SpriteRenderer healthBarRenderer; // Reference to the SpriteRenderer for the health bar
@@ -13,8 +13,6 @@ public class EnemyHealth : MonoBehaviour
     private float healthBarVisibleDuration = 2f; // How long the health bar stays visible after taking damage
     private float healthBarTimer = 0f; // Timer for hiding the health bar
     private float fadeDuration = 1f; // How long the fade out takes
-
-
 
     // Event to notify when the enemy dies
     public delegate void DeathEvent(GameObject enemy);

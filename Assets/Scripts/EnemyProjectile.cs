@@ -6,7 +6,7 @@ public class EnemyProjectile : MonoBehaviour
 {
     [Header("Damage Settings")]
     [Tooltip("Damage dealt to the player upon collision.")]
-    public int damage = 12; // Adjust this value based on your health system (12 removes one heart)
+    public int damage = 12;
 
     [Header("Effects")]
     [Tooltip("Prefab for hit effect (optional).")]
@@ -20,73 +20,75 @@ public class EnemyProjectile : MonoBehaviour
 
     void Start()
     {
-        // Get the Light2D component attached to this GameObject
         projectileLight = GetComponent<Light2D>();
-        // Get the Collider2D component
         projectileCollider = GetComponent<Collider2D>();
-        // Get the Rigidbody2D component
         rb = GetComponent<Rigidbody2D>();
-        // Get the SpriteRenderer component
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        // Check if the projectile is already fading out to prevent multiple triggers
         if (isFadingOut)
             return;
 
         // Check if the collided object is the player
         if (other.CompareTag("Player"))
         {
-            // Get the PlayerHealth component from the player
             PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
-                // Damage the player
                 playerHealth.TakeDamage(damage);
             }
 
-            // Instantiate hit effect at the collision point (optional)
             if (hitEffectPrefab != null)
             {
                 Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
             }
 
-            // Disable the SpriteRenderer to make the sprite disappear
-            if (spriteRenderer != null)
-            {
-                spriteRenderer.enabled = false;
-            }
-
-            // Start the fade-out and destroy process
             StartCoroutine(FadeOutAndDestroy());
         }
-        else
+        else if (other.CompareTag("Projectile"))
         {
-            // Optionally, start fade-out upon collision with other objects
-            // StartCoroutine(FadeOutAndDestroy());
+            // Hit by player projectile, destroy this projectile
+            if (hitEffectPrefab != null)
+            {
+                Instantiate(hitEffectPrefab, transform.position, Quaternion.identity);
+            }
+
+            StartCoroutine(FadeOutAndDestroy());
         }
+    }
+
+    // Call this method when hit by a melee attack
+    public void HandleMeleeHit()
+    {
+        if (isFadingOut)
+            return;
+
+        StartCoroutine(FadeOutAndDestroy());
     }
 
     IEnumerator FadeOutAndDestroy()
     {
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.enabled = false;
+        }
+
         if (isFadingOut)
             yield break;
 
         isFadingOut = true;
 
-        // Disable the collider to prevent further collisions
         if (projectileCollider != null)
         {
             projectileCollider.enabled = false;
         }
 
-        // Stop the projectile's movement
         if (rb != null)
         {
             rb.velocity = Vector2.zero;
-            rb.isKinematic = true; // Optional: Make it kinematic to prevent physics interactions
+            rb.isKinematic = true;
         }
 
         float fadeDuration = 0.5f;
@@ -100,13 +102,11 @@ public class EnemyProjectile : MonoBehaviour
             time += Time.deltaTime;
             float t = time / fadeDuration;
 
-            // Fade out the light intensity
             if (projectileLight != null)
             {
                 projectileLight.intensity = Mathf.Lerp(startLightIntensity, 0, t);
             }
 
-            // Fade out the sprite's alpha
             if (spriteRenderer != null)
             {
                 Color newColor = spriteRenderer.color;
@@ -117,11 +117,11 @@ public class EnemyProjectile : MonoBehaviour
             yield return null;
         }
 
-        // Ensure the light intensity and sprite alpha are set to zero at the end
         if (projectileLight != null)
         {
             projectileLight.intensity = 0;
         }
+
         if (spriteRenderer != null)
         {
             Color newColor = spriteRenderer.color;
@@ -129,7 +129,6 @@ public class EnemyProjectile : MonoBehaviour
             spriteRenderer.color = newColor;
         }
 
-        // After fading out, destroy the projectile
         Destroy(gameObject);
     }
 }

@@ -189,14 +189,26 @@ public class Shooting : MonoBehaviour
 
     private void PerformMeleeAttack()
     {
-        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(bulletTransform.position, meleeRange, enemyLayer);
+        Collider2D[] hitObjects = Physics2D.OverlapCircleAll(bulletTransform.position, meleeRange, enemyLayer);
 
-        foreach (Collider2D enemy in hitEnemies)
+        foreach (Collider2D hitObject in hitObjects)
         {
-            EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+            // Check if the hit object is an enemy
+            EnemyHealth enemyHealth = hitObject.GetComponent<EnemyHealth>();
             if (enemyHealth != null)
             {
                 enemyHealth.TakeDamage(meleeDamage);
+            }
+
+            // Check if the hit object is an enemy projectile
+            EnemyProjectile enemyProjectile = hitObject.GetComponent<EnemyProjectile>();
+            if (enemyProjectile != null)
+            {
+                // Debug log to check if the projectile is hit
+                Debug.Log("Enemy projectile hit by melee attack!");
+
+                // Call the method to handle projectile being hit by melee
+                enemyProjectile.HandleMeleeHit();
             }
         }
     }

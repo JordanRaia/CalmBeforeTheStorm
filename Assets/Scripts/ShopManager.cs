@@ -13,6 +13,13 @@ public class ShopManager : MonoBehaviour
     public TextMeshProUGUI healText;
     public TextMeshProUGUI manaRegenText;
 
+    public Button buyHeartButton;
+    public Button buyManaButton;
+
+    private int heartPurchaseCount = 0;
+    private int manaPurchaseCount = 0;
+    private int maxPurchases = 7;
+
     public PointsManager pointsManager; // Reference to PointsManager script
     public PlayerMana playerMana;
     public PlayerHealth playerHealth; // Reference to PlayerHealth script
@@ -29,6 +36,11 @@ public class ShopManager : MonoBehaviour
     private bool shopIsOpen = false;
 
     public PopupManager popupManager;
+
+    // Font size settings
+    [Header("Font Sizes")]
+    public float defaultFontSize = 15f;       // default size
+    public float soldOutFontSize = 12f;       // sold-out size
 
     void Start()
     {
@@ -58,11 +70,11 @@ public class ShopManager : MonoBehaviour
             shopUI.transform.SetAsLastSibling();
 
             UpdateCoinDisplay();
-            //Time.timeScale = 0f; // Pause the game
+            Time.timeScale = 0f; // Pause the game
         }
         else
         {
-            //Time.timeScale = 1f; // Resume the game
+            Time.timeScale = 1f; // Resume the game
         }
     }
 
@@ -70,51 +82,116 @@ public class ShopManager : MonoBehaviour
     {
         shopIsOpen = false;
         shopUI.SetActive(false);
-        //Time.timeScale = 1f;
+        Time.timeScale = 1f;
     }
 
     public void UpdateCoinDisplay()
     {
         coinText.text = pointsManager.GetPoints().ToString();
-        heartText.text = heartPrice.ToString();
+
+        // Update Heart Text
+        if (heartPurchaseCount >= maxPurchases)
+        {
+            heartText.text = "Sold Out";
+            heartText.fontSize = soldOutFontSize;
+        }
+        else
+        {
+            heartText.text = heartPrice.ToString();
+            heartText.fontSize = defaultFontSize;
+        }
+
+        // Update Mana Text
+        if (manaPurchaseCount >= maxPurchases)
+        {
+            manaText.text = "Sold Out";
+            manaText.fontSize = soldOutFontSize;
+        }
+        else
+        {
+            manaText.text = manaPrice.ToString();
+            manaText.fontSize = defaultFontSize;
+        }
+
+        // Update other texts as usual
         meleeText.text = meleeDamageUpgradePrice.ToString();
-        manaText.text = manaPrice.ToString();
         rangedText.text = rangedDamageUpgradePrice.ToString();
         healText.text = healPrice.ToString();
         manaRegenText.text = manaRegenPrice.ToString();
     }
 
+
+
     // Purchasing Functions
     public void BuyHeart()
     {
+        if (heartPurchaseCount >= maxPurchases)
+        {
+            popupManager.ShowPopup("Maximum Hearts Purchased");
+            return;
+        }
+
         if (pointsManager.GetPoints() >= heartPrice)
         {
             pointsManager.SpendPoints(heartPrice);
-            playerHealth.IncreaseMaxHealth(1); // Increase hearts by 1
+            playerHealth.IncreaseMaxHealth(1);
             heartPrice += 5;
+            heartPurchaseCount++;
+
+            if (heartPurchaseCount >= maxPurchases)
+            {
+                DisableButton(buyHeartButton, heartText);
+            }
+
             UpdateCoinDisplay();
         }
         else
         {
-            // Display the popup message
             popupManager.ShowPopup("Insufficient Funds");
         }
     }
 
+
     public void BuyMana()
     {
+        if (manaPurchaseCount >= maxPurchases)
+        {
+            popupManager.ShowPopup("Maximum Mana Purchased");
+            return;
+        }
+
         if (pointsManager.GetPoints() >= manaPrice)
         {
             pointsManager.SpendPoints(manaPrice);
-            playerMana.IncreaseMaxMana(1); // Increase hearts by 1
+            playerMana.IncreaseMaxMana(1);
             manaPrice += 5;
+            manaPurchaseCount++;
+
+            if (manaPurchaseCount >= maxPurchases)
+            {
+                DisableButton(buyManaButton, manaText);
+            }
+
             UpdateCoinDisplay();
         }
         else
         {
-            // Display the popup message
             popupManager.ShowPopup("Insufficient Funds");
         }
+    }
+
+    private void DisableButton(Button button, TextMeshProUGUI priceText)
+    {
+        button.interactable = false;
+        priceText.text = "Sold Out";
+
+        // Change the button's colors to look disabled
+        ColorBlock colors = button.colors;
+        colors.normalColor = Color.gray;
+        colors.highlightedColor = Color.gray;
+        colors.pressedColor = Color.gray;
+        colors.selectedColor = Color.gray;
+        button.colors = colors;
     }
 
     public void BuyHeal()
@@ -123,6 +200,8 @@ public class ShopManager : MonoBehaviour
         {
             pointsManager.SpendPoints(healPrice);
             playerHealth.Heal(12);
+            healPrice += 1;
+            UpdateCoinDisplay();
         }
         else
         {
@@ -169,6 +248,7 @@ public class ShopManager : MonoBehaviour
         {
             pointsManager.SpendPoints(rangedDamageUpgradePrice);
             shootingScript.IncreaseRangedDamage(5); // Increase ranged damage by 5
+            rangedDamageUpgradePrice += 5;
             UpdateCoinDisplay();
         }
         else

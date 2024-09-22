@@ -72,21 +72,21 @@ public class BulletScript : MonoBehaviour
             StartCoroutine(FadeOutAndDestroy());
         }
         // Check for collision with a TilemapCollider2D
-        else if (collision.GetComponent<TilemapCollider2D>() != null)
-        {
-            // Disable the SpriteRenderer to make the sprite disappear
-            if (spriteRenderer != null)
-            {
-                spriteRenderer.enabled = false;
-            }
+        // else if (collision.GetComponent<TilemapCollider2D>() != null)
+        // {
+        //     // Disable the SpriteRenderer to make the sprite disappear
+        //     if (spriteRenderer != null)
+        //     {
+        //         spriteRenderer.enabled = false;
+        //     }
 
-            // Disable collider and stop movement
-            GetComponent<Collider2D>().enabled = false;
-            GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        //     // Disable collider and stop movement
+        //     GetComponent<Collider2D>().enabled = false;
+        //     GetComponent<Rigidbody2D>().velocity = Vector2.zero;
 
-            // Start the fade-out coroutine
-            StartCoroutine(FadeOutAndDestroy());
-        }
+        //     // Start the fade-out coroutine
+        //     StartCoroutine(FadeOutAndDestroy());
+        // }
     }
 
     IEnumerator FadeOutAndDestroy()

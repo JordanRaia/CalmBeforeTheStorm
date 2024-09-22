@@ -139,7 +139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbf397e6f68603a4c870e68f220c605b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 140
+  maxHealth: 120
   healthBarRenderer: {fileID: 6647455092731697988}
   healthBarSprites:
   - {fileID: -88262330, guid: 01e7c8ec2f32cdc4a8a98c7991615293, type: 3}
@@ -164,11 +164,6 @@ MonoBehaviour:
   - {fileID: 2034082249, guid: 01e7c8ec2f32cdc4a8a98c7991615293, type: 3}
   - {fileID: -1815902827, guid: 01e7c8ec2f32cdc4a8a98c7991615293, type: 3}
   - {fileID: -1297029100, guid: 01e7c8ec2f32cdc4a8a98c7991615293, type: 3}
-  healthBarVisibleDuration: 2
-  fadeDuration: 1
-  coinsOnDeath: 2
-  hitColor: {r: 1, g: 0, b: 0, a: 1}
-  flashDuration: 0.1
   pointsOnDeath: 2
 --- !u!50 &3650264382381970596
 Rigidbody2D:
