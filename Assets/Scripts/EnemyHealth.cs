@@ -10,9 +10,9 @@ public class EnemyHealth : MonoBehaviour
     // Health bar sprite management
     public SpriteRenderer healthBarRenderer; // Reference to the SpriteRenderer for the health bar
     public Sprite[] healthBarSprites; // Array of sprites representing health stages (from empty to full)
-    public float healthBarVisibleDuration = 2f; // How long the health bar stays visible after taking damage
+    private float healthBarVisibleDuration = 2f; // How long the health bar stays visible after taking damage
     private float healthBarTimer = 0f; // Timer for hiding the health bar
-    public float fadeDuration = 1f; // How long the fade out takes
+    private float fadeDuration = 1f; // How long the fade out takes
 
 
 
@@ -21,8 +21,8 @@ public class EnemyHealth : MonoBehaviour
     public event DeathEvent OnDeath;
 
     private SpriteRenderer spriteRenderer; // Reference to the enemy's sprite renderer
-    public Color hitColor = Color.red; // Color when hit
-    public float flashDuration = 0.1f; // Duration of the flash
+    private Color hitColor = Color.red; // Color when hit
+    private float flashDuration = 0.1f; // Duration of the flash
 
     private Color originalColor; // To store the original color of the health bar
 
