@@ -39,6 +39,9 @@ public class Shooting : MonoBehaviour
     public GameObject playerGameObject; // Reference to the player GameObject
     public GameObject smoke; // Reference to the smoke prefab
 
+    // Audio variables
+    public AudioClip meleeSwingSound; // Assign this in the Inspector
+    private AudioSource audioSource;
 
     void Start()
     {
@@ -48,7 +51,7 @@ public class Shooting : MonoBehaviour
         initialBulletRotation = Quaternion.Euler(0, 0, -90);
         bulletTransform.localRotation = initialBulletRotation;
 
-        // Get the PlayerMana component from the player GameObject
+        // Initialize PlayerMana
         if (playerGameObject != null)
         {
             playerMana = playerGameObject.GetComponent<PlayerMana>();
@@ -60,6 +63,13 @@ public class Shooting : MonoBehaviour
         else
         {
             Debug.LogError("Player GameObject is not assigned in the Shooting script!");
+        }
+
+        // Initialize AudioSource
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            Debug.LogError("AudioSource component missing from this GameObject!");
         }
     }
 
@@ -145,6 +155,11 @@ public class Shooting : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 canMelee = false;
+
+                // Play melee swing sound
+                PlayMeleeSwingSound();
+
+                // Start swinging and perform attack
                 StartCoroutine(SwingSword(rotZ));
                 PerformMeleeAttack();
             }
@@ -204,12 +219,21 @@ public class Shooting : MonoBehaviour
             EnemyProjectile enemyProjectile = hitObject.GetComponent<EnemyProjectile>();
             if (enemyProjectile != null)
             {
-                // Debug log to check if the projectile is hit
-                Debug.Log("Enemy projectile hit by melee attack!");
-
                 // Call the method to handle projectile being hit by melee
                 enemyProjectile.HandleMeleeHit();
             }
+        }
+    }
+
+    private void PlayMeleeSwingSound()
+    {
+        if (audioSource != null && meleeSwingSound != null)
+        {
+            audioSource.PlayOneShot(meleeSwingSound);
+        }
+        else
+        {
+            Debug.LogWarning("AudioSource or meleeSwingSound not assigned.");
         }
     }
 

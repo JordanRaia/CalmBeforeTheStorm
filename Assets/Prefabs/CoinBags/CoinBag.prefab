@@ -101,6 +101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointValue: 1
+  collectSound: {fileID: 8300000, guid: 49369aea036881a45b3b135a5c1b90a9, type: 3}
+  soundVolume: 1
 --- !u!61 &3736929948668871274
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -5,32 +5,44 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    //hearts and health
-    public int health = 3; // start will change this to 3 hearts worth of health
+    // Hearts and health
+    public int health = 3; // Start with 3 hearts worth of health
     public int numOfHearts = 3;
     public Image[] hearts;
     public Sprite[] heartSprites; // Array of 12 sprites for each heart state
     private int healthPerHeart = 12;
 
-    //damage red tint
+    // Damage red tint
     public Image damageOverlay;
     public float flashDuration = 0.5f;
 
-    // invincibility flash
+    // Invincibility flash
     public SpriteRenderer playerSprite;
     public float invincibilityDuration = 2f;
     public int flashCount = 10;
     private bool isInvincible = false;
 
-    //screen shake
+    // Screen shake
     public ScreenShake screenShake;
 
     public int maxHearts = 10; // Maximum number of hearts allowed
 
+    // Audio components
+    [Header("Audio Settings")]
+    public AudioClip hurtSound; // Assign this in the Inspector
+    private AudioSource audioSource;
+
     void Start()
     {
-        // set health to number of hearts worth of health
+        // Initialize health based on number of hearts
         health = health * healthPerHeart;
+
+        // Get the AudioSource component
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            Debug.LogError("AudioSource component missing from the player GameObject.");
+        }
     }
 
     void Update()
@@ -65,6 +77,16 @@ public class PlayerHealth : MonoBehaviour
 
         health -= damage;
 
+        // Play hurt sound
+        if (audioSource != null && hurtSound != null)
+        {
+            audioSource.PlayOneShot(hurtSound);
+        }
+        else
+        {
+            Debug.LogWarning("AudioSource or hurtSound not assigned.");
+        }
+
         // Flash screen on damage
         if (damageOverlay != null)
         {
@@ -91,7 +113,7 @@ public class PlayerHealth : MonoBehaviour
     private IEnumerator FlashDamageOverlay()
     {
         float elapsedTime = 0f;
-        float halfFlashDuration = flashDuration / 1f; // Split the duration into two phases
+        float halfFlashDuration = flashDuration / 2f; // Split the duration into two phases
 
         // First phase: Fade in from transparent to half-transparent red
         while (elapsedTime < halfFlashDuration)
@@ -161,9 +183,5 @@ public class PlayerHealth : MonoBehaviour
             numOfHearts = maxHearts;
         }
         health = numOfHearts * healthPerHeart;
-
-        // Ensure UI updates correctly
-        // Update();
     }
-
 }

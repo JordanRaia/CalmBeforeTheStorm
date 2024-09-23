@@ -71,18 +71,32 @@ public class ShopManager : MonoBehaviour
 
             UpdateCoinDisplay();
             Time.timeScale = 0f; // Pause the game
+
+            // Disable Shooting
+            if (shootingScript != null)
+            {
+                shootingScript.enabled = false;
+            }
         }
         else
         {
             Time.timeScale = 1f; // Resume the game
+
+            // Enable Shooting
+            if (shootingScript != null)
+            {
+                shootingScript.enabled = true;
+            }
         }
     }
+
 
     public void CloseShop()
     {
         shopIsOpen = false;
         shopUI.SetActive(false);
         Time.timeScale = 1f;
+        shootingScript.enabled = true;
     }
 
     public void UpdateCoinDisplay()
