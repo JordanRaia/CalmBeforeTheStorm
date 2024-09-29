@@ -37,7 +37,7 @@ public class WaveManager : MonoBehaviour
         StartRestPeriod(25f);
 
         string[] dialogueLines = {
-            "Welcome", "Press E to open Shop", "Press Space to switch between ranged and melee weapons", "Click to attack", "Good Luck!"
+            "Welcome", "Press E to open Shop", "Press Space to switch between ranged and melee weapons", "Click to attack",
         };
 
         dialogueManager.StartDialogue(dialogueLines);
