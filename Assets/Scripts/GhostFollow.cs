@@ -12,6 +12,9 @@ public class GhostFollow : MonoBehaviour
         // Find the player by tag
         player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
+
+        // Ensure the ghost's collider is set to trigger
+        GetComponent<Collider2D>().isTrigger = true;
     }
 
     void FixedUpdate()
@@ -25,13 +28,13 @@ public class GhostFollow : MonoBehaviour
         }
     }
 
-    // Detect collision with the player
-    private void OnCollisionEnter2D(Collision2D collision)
+    // Detect trigger collision with the player
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
             // Try to get the PlayerHealth component and deal damage
-            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);

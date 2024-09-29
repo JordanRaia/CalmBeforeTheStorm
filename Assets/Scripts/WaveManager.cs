@@ -17,7 +17,8 @@ public class WaveManager : MonoBehaviour
     public float timeBetweenWaves = 15f;  // Rest period duration
     public Text waveStatusText; // UI Text to display the rest period countdown
 
-    private int currentWave = 0;
+    public int currentWave = 0;
+    public int enemiesDefeated = 0;
     private bool isResting = true; // Start the game in resting state
     private float restTimer;
 
@@ -28,11 +29,18 @@ public class WaveManager : MonoBehaviour
     private List<GameObject> coinBags = new List<GameObject>();  // To track spawned coin bags
 
     public float spawnDelay = 2f; // Delay between each enemy spawn
+    public DialogueManager dialogueManager;
 
     void Start()
     {
         // Start with the rest period when the game begins
-        StartRestPeriod();
+        StartRestPeriod(25f);
+
+        string[] dialogueLines = {
+            "Welcome", "Press E to open Shop", "Press Space to switch between ranged and melee weapons", "Click to attack", "Good Luck!"
+        };
+
+        dialogueManager.StartDialogue(dialogueLines);
     }
 
     void Update()
@@ -70,6 +78,24 @@ public class WaveManager : MonoBehaviour
 
         // Determine which enemies to spawn based on the current wave
         List<GameObject> availableEnemies = new List<GameObject>();
+
+        if (currentWave == 5 || currentWave == 10)
+        {
+            string[] dialogueLines = {
+            "Stronger Enemies will now spawn",
+            };
+
+            dialogueManager.StartDialogue(dialogueLines);
+        }
+
+        if (currentWave >= 15 && currentWave % 5 == 0)
+        {
+            string[] dialogueLines = {
+            "Enemies health and damage has been increased",
+            };
+
+            dialogueManager.StartDialogue(dialogueLines);
+        }
 
         if (currentWave <= 5)
         {
@@ -120,10 +146,15 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    void StartRestPeriod()
+    void StartRestPeriod(float time = 0f)
     {
         isResting = true;
         restTimer = timeBetweenWaves;
+        if (time != 0f)
+        {
+            restTimer = time;
+        }
+
         waveStatusText.text = "Rest: " + Mathf.Ceil(restTimer);
 
         // Spawn coin bags during the rest period
@@ -134,6 +165,7 @@ public class WaveManager : MonoBehaviour
     {
         // Remove the enemy from the active list
         activeEnemies.Remove(enemy);
+        enemiesDefeated += 1;
     }
 
     void SpawnCoinBags()

@@ -83,7 +83,10 @@ public class PlayerMana : MonoBehaviour
         {
             numOfManaBars = manaBars.Length;
         }
-        mana = numOfManaBars * manaPerBar;
+
+        // Update maxMana before setting mana
+        maxMana = manaPerBar * numOfManaBars;
+        mana = maxMana;
     }
 
     public void IncreaseManaRegen()

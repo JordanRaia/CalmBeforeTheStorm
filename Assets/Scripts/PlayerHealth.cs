@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     // Damage red tint
     public Image damageOverlay;
     public float flashDuration = 0.5f;
+    public GameObject deathUIPanel;
 
     // Invincibility flash
     public SpriteRenderer playerSprite;
@@ -26,6 +28,10 @@ public class PlayerHealth : MonoBehaviour
     public ScreenShake screenShake;
 
     public int maxHearts = 10; // Maximum number of hearts allowed
+
+    public WaveManager waveManager;  // Reference to the WaveManager script
+    public TMP_Text waveReachedText;  // TextMeshPro for wave reached
+    public TMP_Text enemiesKilledText;  // TextMeshPro for enemies killed
 
     // Audio components
     [Header("Audio Settings")]
@@ -42,6 +48,12 @@ public class PlayerHealth : MonoBehaviour
         if (audioSource == null)
         {
             Debug.LogError("AudioSource component missing from the player GameObject.");
+        }
+
+        // Ensure the WaveManager reference is set (you can assign it in the Inspector)
+        if (waveManager == null)
+        {
+            waveManager = FindObjectOfType<WaveManager>();
         }
     }
 
@@ -161,9 +173,36 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Player died");
-        // Add death logic here (e.g., respawn, reload level, or disable player)
+
+        // Set all heart sprites to the empty state
+        foreach (Image heart in hearts)
+        {
+            heart.sprite = heartSprites[0];
+        }
+
+        // Keep the red damage overlay fully opaque
+        if (damageOverlay != null)
+        {
+            damageOverlay.color = new Color(1, 0, 0, 0.12f); // Solid red tint
+        }
+
+        // Update the wave and enemies killed text
+        if (waveManager != null)
+        {
+            waveReachedText.text = "Wave: " + waveManager.currentWave;
+            enemiesKilledText.text = "Enemies Killed: " + waveManager.enemiesDefeated;
+        }
+
+        // Activate the death UI panel
+        if (deathUIPanel != null)
+        {
+            deathUIPanel.SetActive(true); // Show the death UI
+        }
+
+        // Disable player controls or hide the player
         gameObject.SetActive(false);
     }
+
 
     // Function to heal the player (if needed)
     public void Heal(int healAmount)
